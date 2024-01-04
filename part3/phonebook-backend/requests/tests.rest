@@ -1,0 +1,18 @@
+### Get all resources
+GET http://localhost:3001/api/persons
+
+
+### Delete a resource
+GET http://localhost:3001/api/persons/3
+
+### Post a new person
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Li",
+    "number": "040-243563"
+}
+
+### Delete a person
+DELETE http://localhost:3001/api/persons/6592f5ff66143034f8b35d26
