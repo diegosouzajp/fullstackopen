@@ -234,9 +234,6 @@ describe('Exercises 4.13 to 4.14', () => {
     let blogs = response.body
     const initialAmount = blogs.length
 
-    console.log('blogs[0].id: ', blogs[0].id)
-    console.log('token: ', token)
-
     await api.delete(`/api/blogs/${blogs[0].id}`).set('Authorization', `Bearer ${token}`).expect(204)
 
     response = await api.get('/api/blogs')
@@ -348,6 +345,24 @@ describe('Exercises 4.15 to 4.23', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
       .expect({ error: 'expected `username` to be unique' })
+  })
+
+  test.only('adding a blog fails with status 401 if a token is not provided', async () => {
+    await Blog.deleteMany({})
+
+    const newBlog = {
+      title: 'Go To Statement Considered Harmful',
+      author: 'Edsger W. Dijkstra',
+      url: 'https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf',
+      likes: 5,
+    }
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(401)
+      .expect('Content-Type', /application\/json/)
+      .expect({ error: 'token invalid' })
   })
 })
 

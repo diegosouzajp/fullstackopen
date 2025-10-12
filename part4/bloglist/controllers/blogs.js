@@ -18,13 +18,12 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
   const body = request.body
   const user = request.user
 
-  if (!user) {
-    return response.status(400).json({ error: 'UserId missing or not valid' })
+  if (!request.token) {
+    return response.status(401)
   }
 
   if (!request.body.title || !request.body.url) {
-    response.status(400).json(request.body)
-    return
+    return response.status(400).json(request.body)
   }
 
   const blog = new Blog({
@@ -60,9 +59,7 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
   }
 
   await Blog.findByIdAndDelete(request.params.id)
-  console.log('user.blogs before: ', user.blogs)
   user.blogs = user.blogs.filter((item) => item.toString() !== blog.id)
-  console.log('user.blogs after: ', user.blogs)
   await user.save()
 
   response.status(204).end()

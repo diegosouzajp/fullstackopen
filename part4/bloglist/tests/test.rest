@@ -28,7 +28,7 @@ content-type: application/json
 ###
 POST http://localhost:3003/api/blogs/
 Content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRpZWdvc291emFqcCIsImlkIjoiNjhlYmZmZGZiNzgyMDMxZmNhZDQwMDJlIiwiaWF0IjoxNzYwMjk2OTMxLCJleHAiOjE3NjAzMDA1MzF9.EuwtDUDfz-HQVIRSt3xGNZLL2FzljsmBBVpL5sJ0mu8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRpZWdvc291emFqcCIsImlkIjoiNjhlYzIxYWUxOGU2NDFkNzZlYTY3MjNmIiwiaWF0IjoxNzYwMzA1NTkwLCJleHAiOjE3NjAzMDkxOTB9.IKXVIyIr9Z5reG3YJGbO3FEsdXoyEYg3DzNjZUJdHLs
 
 {
     "title": "Testing a second time",
@@ -38,8 +38,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRpZ
 }
 
 ###
-DELETE http://localhost:3003/api/blogs/68ec00c7b782031fcad40040
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRpZWdvc291emFqcCIsImlkIjoiNjhlYmZmZGZiNzgyMDMxZmNhZDQwMDJlIiwiaWF0IjoxNzYwMjk2OTMxLCJleHAiOjE3NjAzMDA1MzF9.EuwtDUDfz-HQVIRSt3xGNZLL2FzljsmBBVpL5sJ0mu8
+DELETE http://localhost:3003/api/blogs/68ec21da18e641d76ea67245
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRpZWdvc291emFqcCIsImlkIjoiNjhlYzIxYWUxOGU2NDFkNzZlYTY3MjNmIiwiaWF0IjoxNzYwMzA1NTkwLCJleHAiOjE3NjAzMDkxOTB9.IKXVIyIr9Z5reG3YJGbO3FEsdXoyEYg3DzNjZUJdHLs
 
 ###
 GET http://localhost:3003/api/users/
